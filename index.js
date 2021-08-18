@@ -21,6 +21,7 @@ function getTorrentState(){
                     if(oldList.findIndex((ele) => ele == result.torrents[i].id) == -1){
                         oldList.push(result.torrents[i].id);
                         publish(result.torrents[i].name);
+                        transmission.remove(result.torrents[i].id,function(){});
                     }
                 }
             }
